@@ -18,17 +18,19 @@ public class Java26 {
         int randomX = ThreadLocalRandom.current().nextInt(-100, 101);
         int randomY = ThreadLocalRandom.current().nextInt(-100, 101);
         int attempts = 0;
-
-        System.out.println("Choose the difficulty:\n1 1.Easy\n2 2.Medium\n3 3.Hard"); //Difficulty Option
+        
+        System.out.println("Welcome to the game!");
+        System.out.println("Choose the difficulty of the game(based on the difficulty you will get a certain amount attempts to win the game:\n1 1.Easy(20 attempts)\n2 2.Medium(15 attempts)\n3 3.Hard(10 attempts)"); //Difficulty Option
         int diff = Integer.parseInt(scan.nextLine());
         switch (diff) {
-            case 1 -> attempts = 30;
-            case 2 -> attempts = 20;
+            case 1 -> attempts = 20;
+            case 2 -> attempts = 15;
             case 3 -> attempts = 10;
             default -> System.out.println("Invalid Choice!");
         }
         
         do { 
+            int score = attempts;
             System.out.println("Chances left:  " + attempts);
             System.out.println("Guess the X position: ");
             int guessX = Integer.parseInt(scan.nextLine());
@@ -57,10 +59,13 @@ public class Java26 {
             } else if ((guessX > randomX) && (guessY > randomY)) {
                 System.out.println("!<");
                 attempts--;
-            } else if ((guessX > randomX) && (guessY > randomY)) {
+            } else if ((guessX == randomX) && (guessY == randomY)) {
                 System.out.println("You win!! Hooray!!");
+                System.out.println("You only took " + (score - attempts) + " attempts to win!!");
             }
         } while (attempts > 0);
-        System.out.println("You lose!");
+        if (attempts == 0) {
+            System.out.println("You lose!");
+        }
     }
 }
