@@ -10,4 +10,5 @@
         <maven.compiler.release>25</maven.compiler.release>
         <exec.mainClass>com.mycompany.java26.Java26</exec.mainClass>
     </properties>
+    <name>game</name>
 </project>
