@@ -14,8 +14,8 @@ public class Java26 {
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        int randomX = ThreadLocalRandom.current().nextInt(-10, 11);
-        int randomY = ThreadLocalRandom.current().nextInt(-10, 11);
+        int randomX = ThreadLocalRandom.current().nextInt(-100, 101);
+        int randomY = ThreadLocalRandom.current().nextInt(-100, 101);
         int attempts = 0;
         int count = 0;
         int[] dataX = new int[100];
@@ -94,4 +94,4 @@ public class Java26 {
         }
     }
 } 
-//This is the end of the game...
+//This is the end of the game..
