@@ -14,10 +14,10 @@ public class Java26 {
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        int randomX = ThreadLocalRandom.current().nextInt(-10, 11);
-        int randomY = ThreadLocalRandom.current().nextInt(-10, 11);
+        int randomX = ThreadLocalRandom.current().nextInt(-100, 101);
+        int randomY = ThreadLocalRandom.current().nextInt(-100, 101);
         int attempts = 0;
-        int count = -1;
+        int count = 0;
         int[] dataX = new int[100];
         int[] dataY = new int[100];
         
@@ -99,7 +99,7 @@ public class Java26 {
                 System.out.println("Attempts left:  " + attempts);
             } else if ((guessX == randomX) && (guessY == randomY)) {
                 System.out.println("You win!! Hooray!!");
-                System.out.println("You only took " + (score - attempts) + " attempts to win!!");
+                System.out.println("It only took you " + (score - attempts) + " attempts to win!!");
                 break;
             }
         } while (attempts > 0);
@@ -112,4 +112,5 @@ public class Java26 {
             System.out.println(i + "(" + dataX[i] + "," + dataY[i] + ")");
         }
     }
-}
+} 
+//This is the end of the game...
