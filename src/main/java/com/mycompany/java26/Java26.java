@@ -18,8 +18,7 @@ public class Java26 {
         int randomY = ThreadLocalRandom.current().nextInt(-100, 101);
         int attempts = 0;
         int count = 0;
-        int[] dataX = new int[100];
-        int[] dataY = new int[100];
+        
         
         System.out.println("Welcome to the game!");
         System.out.println("Choose the difficulty of the game(based on the difficulty you will get a certain amount attempts to win the game:\n1 1.Easy(20 attempts)\n2 2.Medium(15 attempts)\n3 3.Hard(10 attempts)"); //Difficulty Option
@@ -34,6 +33,8 @@ public class Java26 {
             default ->
                 System.out.println("Invalid Choice!");
         }
+        int[] dataX = new int[attempts];
+        int[] dataY = new int[attempts];
         System.out.println("Attempts left:  " + attempts);
         int score = attempts;
         do {
